@@ -49,6 +49,11 @@ describe "User pages" do
         end
 
         it { should have_link('Sign out') }
+
+        describe "then signing out" do
+          before { click_link 'Sign out' }
+          it { should have_link('Sign in') }
+        end
       end
     end
   end
